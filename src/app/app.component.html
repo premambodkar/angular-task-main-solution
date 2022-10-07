@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1>Cocktail Search</h1>
+      <h3>Just input an ingredient which you got by hand and start mixing!</h3>
+      <div class="form-group">
+        <label for="searchString">Search</label>
+        <input type="text"
+            class="form-control"
+            name="searchString"
+            [(ngModel)]="searchString"
+            id="searchString"
+            (input)="searchData()"
+            aria-describedby="searchString"
+            placeholder="Search">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let drink of drinks;">
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" [src]="drink.strDrinkThumb" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ drink.strDrink }}</h5>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
